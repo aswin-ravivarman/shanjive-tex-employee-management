@@ -1,0 +1,180 @@
+/* SettingsPage.css */
+
+.set-wrapper {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 100%;
+}
+
+.set-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.set-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-1) 0;
+  line-height: 1.2;
+}
+
+.set-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── TABS ──────────────────────────────────────────────────── */
+.set-tabs {
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 2px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for tabs */
+.set-tabs::-webkit-scrollbar {
+  display: none;
+}
+.set-tabs {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.set-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.set-tab:hover {
+  color: var(--color-primary);
+}
+
+.set-tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.set-tab-icon {
+  font-size: 1.1rem;
+}
+
+/* ─── PANEL ─────────────────────────────────────────────────── */
+.set-panel {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.set-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+}
+
+.set-panel-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ─── FORM GRID ─────────────────────────────────────────────── */
+.set-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+@media screen and (max-width: 768px) {
+  .set-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .set-form-grid > div {
+    grid-column: span 1 !important;
+  }
+}
+
+.set-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+/* ─── MODAL FORM ────────────────────────────────────────────── */
+.set-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.set-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin-top: var(--space-2);
+}
+/* Admin Management Actions Row */
+.set-admins-actions {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Make Employee Admin Info Banner */
+.set-make-admin-info {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--color-primary-subtle, rgba(37, 99, 235, 0.06));
+  border: 1px solid var(--color-primary-light, rgba(37, 99, 235, 0.2));
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.set-make-admin-icon {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.set-make-admin-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}

@@ -1,0 +1,136 @@
+/* Button.css */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast) ease-in-out;
+  white-space: nowrap;
+  outline: none;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+}
+
+/* ─── VARIANTS ──────────────────────────────────────────────── */
+
+/* Primary */
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-primary-glow);
+}
+
+.btn--primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary */
+.btn--secondary {
+  background: var(--color-neutral-100);
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--color-neutral-200);
+  color: var(--color-text-primary);
+}
+
+/* Outline */
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: var(--color-neutral-50);
+  color: var(--color-text-primary);
+  border-color: var(--color-neutral-400);
+}
+
+/* Danger */
+.btn--danger {
+  background: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: var(--color-danger-dark);
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.2);
+}
+
+/* Text */
+.btn--text {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  padding-left: var(--space-1) !important;
+  padding-right: var(--space-1) !important;
+}
+
+.btn--text:hover:not(:disabled) {
+  color: var(--color-primary);
+}
+
+/* ─── SIZES ─────────────────────────────────────────────────── */
+
+.btn--sm {
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+}
+
+.btn--md {
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.btn--lg {
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-base);
+  border-radius: var(--radius-lg);
+}
+
+/* ─── STATES ────────────────────────────────────────────────── */
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none !important;
+}
+
+.btn--loading {
+  cursor: wait;
+}
+
+/* ─── SPINNER ────────────────────────────────────────────────── */
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: currentColor;
+  border-radius: var(--radius-full);
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+/* Left/Right Icon adjustments */
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15em;
+}

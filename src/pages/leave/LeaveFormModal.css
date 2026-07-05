@@ -1,0 +1,78 @@
+/* LeaveFormModal.css */
+
+.leave-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.leave-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+/* ─── LEAVE BALANCE BANNER ───────────────────────────────────── */
+.leave-balance-banner {
+  background: var(--color-info-subtle);
+  border: 1px solid var(--color-info-light);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.leave-balance-title {
+  font-weight: var(--font-bold);
+  color: var(--color-info-dark);
+}
+
+.leave-balance-value {
+  color: var(--color-info-dark);
+  font-weight: var(--font-medium);
+}
+
+.leave-balance-strong {
+  font-weight: var(--font-bold);
+}
+
+.leave-balance-value--none {
+  color: var(--color-neutral-500);
+}
+
+/* ─── SUMMARY DAYS ────────────────────────────────────────────── */
+.leave-form-row-summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: var(--color-neutral-50);
+  border: 1px solid var(--color-border);
+  padding: var(--space-2-5) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.leave-summary-days {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.leave-summary-days strong {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-bold);
+}
+
+/* ─── ACTIONS ────────────────────────────────────────────────── */
+.leave-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin-top: var(--space-2);
+}

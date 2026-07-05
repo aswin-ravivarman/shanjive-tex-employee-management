@@ -1,0 +1,8 @@
+/*
+  App.css — intentionally empty.
+  All global styles live in src/styles/variables.css + src/styles/global.css.
+  Component-level styles are co-located with their component files.
+  This file is kept only because src/App.jsx still imports it during the
+  transition period (Modules 1–3). It will be removed when App.jsx is
+  rewritten in Module 4 (Authentication).
+*/

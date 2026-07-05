@@ -1,0 +1,42 @@
+/* SearchBar.css */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.search-bar-left {
+  flex: 1;
+  max-width: 320px;
+  min-width: 240px;
+}
+
+.search-bar-input {
+  margin: 0;
+}
+
+.search-bar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-bar-left {
+    max-width: 100%;
+  }
+  
+  .search-bar-right {
+    justify-content: flex-end;
+  }
+}

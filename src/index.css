@@ -1,0 +1,15 @@
+/* =============================================================
+   Shanjive Tex HRMS — CSS Entry Point
+   src/index.css
+
+   Import order matters:
+     1. variables.css  — design tokens (must come first)
+     2. global.css     — base styles that reference those tokens
+
+   Do NOT add any styles here. This file is the entry point only.
+   Component styles live in their own .css files alongside the
+   component, imported directly by the component.
+   ============================================================= */
+
+@import './styles/variables.css';
+@import './styles/global.css';

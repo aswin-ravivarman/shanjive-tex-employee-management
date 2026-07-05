@@ -1,0 +1,220 @@
+/* Login.css */
+
+/* ─── CARD ─────────────────────────────────────────────────── */
+.login-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+}
+
+/* ─── HEADER ────────────────────────────────────────────────── */
+.login-header {
+  margin-bottom: var(--space-7);
+  text-align: center;
+}
+
+.login-logo {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: var(--space-4);
+  display: inline-block;
+}
+
+.login-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-1);
+}
+
+.login-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ─── ERROR BANNER ──────────────────────────────────────────── */
+.login-error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  background: var(--color-danger-subtle);
+  border: 1px solid var(--color-danger-light);
+  border-left: 3px solid var(--color-danger);
+  color: var(--color-danger-dark);
+  font-size: var(--text-sm);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+  animation: scale-in 0.2s ease;
+}
+
+/* ─── FORM ──────────────────────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ─── FIELD ─────────────────────────────────────────────────── */
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.login-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+}
+
+/* ─── INPUT WRAPPER ─────────────────────────────────────────── */
+.login-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input-icon {
+  position: absolute;
+  left: var(--space-3);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.login-input {
+  width: 100%;
+  height: var(--input-height-lg);
+  padding: 0 var(--space-10) 0 var(--space-10);
+  background: var(--input-bg);
+  border: 1.5px solid var(--input-border);
+  border-radius: var(--input-radius);
+  font-size: var(--text-sm);
+  color: var(--input-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.login-input:focus {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.login-input:disabled {
+  background: var(--color-neutral-100);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+/* Error state */
+.login-input-wrapper.has-error .login-input {
+  border-color: var(--input-border-error);
+}
+
+.login-input-wrapper.has-error .login-input:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.login-input-wrapper.has-error .login-input-icon {
+  color: var(--color-danger);
+}
+
+/* ─── PASSWORD TOGGLE ────────────────────────────────────────── */
+.login-password-toggle {
+  position: absolute;
+  right: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.login-password-toggle:hover {
+  color: var(--color-text-secondary);
+  background: var(--color-neutral-100);
+}
+
+/* ─── FIELD ERROR ────────────────────────────────────────────── */
+.login-field-error {
+  font-size: var(--text-xs);
+  color: var(--color-danger);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  animation: slide-in-up 0.15s ease;
+}
+
+/* ─── SUBMIT BUTTON ──────────────────────────────────────────── */
+.login-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  height: var(--input-height-lg);
+  margin-top: var(--space-2);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-primary-glow);
+  transform: translateY(-1px);
+}
+
+.login-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.login-submit-btn:disabled {
+  background: var(--color-neutral-400);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── SPINNER ────────────────────────────────────────────────── */
+.login-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: var(--radius-full);
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ─── FOOTER NOTE ────────────────────────────────────────────── */
+.login-footer-note {
+  margin-top: var(--space-6);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
+}

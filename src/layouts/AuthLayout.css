@@ -1,0 +1,190 @@
+/* AuthLayout.css */
+
+.auth-layout {
+  display: flex;
+  min-height: 100dvh;
+  background: var(--color-bg-page);
+}
+
+/* ─── LEFT BRAND PANEL ─────────────────────────────────────── */
+.auth-brand-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  min-height: 100dvh;
+  background: linear-gradient(
+    145deg,
+    var(--color-neutral-900) 0%,
+    var(--color-neutral-800) 50%,
+    #1a3a5c 100%
+  );
+  padding: var(--space-12) var(--space-10);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-brand-content {
+  position: relative;
+  z-index: var(--z-raised);
+  max-width: 380px;
+  width: 100%;
+  animation: slide-in-right 0.5s ease;
+}
+
+/* Logo mark — geometric "ST" monogram */
+.auth-logo-mark {
+  width: 72px;
+  height: 72px;
+  background: var(--color-primary);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-primary-glow), 0 0 0 8px rgba(37, 99, 235, 0.15);
+}
+
+.auth-logo-letters {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  letter-spacing: -0.03em;
+  font-family: var(--font-sans);
+}
+
+/* Company name */
+.auth-brand-text {
+  margin-bottom: var(--space-10);
+}
+
+.auth-company-name {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-2);
+  line-height: 1.1;
+}
+
+.auth-company-tagline {
+  font-size: var(--text-base);
+  color: var(--color-sidebar-text);
+  font-weight: var(--font-normal);
+  letter-spacing: 0.01em;
+}
+
+/* Feature list */
+.auth-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.auth-feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-neutral-300);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.auth-feature-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+}
+
+/* Decorative background circles */
+.auth-circle {
+  position: absolute;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.auth-circle-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: -150px;
+}
+
+.auth-circle-2 {
+  width: 250px;
+  height: 250px;
+  bottom: 50px;
+  left: -80px;
+}
+
+.auth-circle-3 {
+  width: 160px;
+  height: 160px;
+  bottom: 200px;
+  right: -40px;
+}
+
+/* ─── RIGHT FORM PANEL ─────────────────────────────────────── */
+.auth-form-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  background: var(--color-bg-page);
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 420px;
+  animation: slide-in-up 0.4s ease;
+}
+
+/* ─── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .auth-layout {
+    flex-direction: column;
+  }
+
+  .auth-brand-panel {
+    width: 100%;
+    min-height: auto;
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .auth-brand-content {
+    max-width: none;
+  }
+
+  .auth-company-name {
+    font-size: var(--text-2xl);
+  }
+
+  .auth-feature-list {
+    display: none; /* Hide on mobile to keep it compact */
+  }
+
+  .auth-logo-mark {
+    width: 56px;
+    height: 56px;
+    margin-bottom: var(--space-5);
+  }
+
+  .auth-logo-letters {
+    font-size: var(--text-xl);
+  }
+
+  .auth-circle {
+    display: none;
+  }
+
+  .auth-form-panel {
+    padding: var(--space-6) var(--space-4);
+    align-items: flex-start;
+  }
+}

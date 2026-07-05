@@ -1,0 +1,688 @@
+/* ReportsPage.css */
+
+.rep-wrapper {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 100%;
+}
+
+.rep-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.rep-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-1) 0;
+  line-height: 1.2;
+}
+
+.rep-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.rep-export-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ─── TABS ──────────────────────────────────────────────────── */
+.rep-tabs {
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 2px;
+}
+
+.rep-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.rep-tab:hover {
+  color: var(--color-primary);
+}
+
+.rep-tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.rep-tab-icon {
+  font-size: 1.1rem;
+}
+
+/* ─── FILTER PANEL ──────────────────────────────────────────── */
+.rep-filter-panel {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.rep-filter-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.rep-filter-lead-icon {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.rep-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.rep-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.rep-select-input {
+  width: 180px;
+  margin: 0;
+}
+
+.rep-date-picker {
+  height: 38px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  outline: none;
+  cursor: pointer;
+}
+
+.rep-date-picker:focus {
+  border-color: var(--color-primary);
+}
+
+/* ─── CHART DASHBOARD ───────────────────────────────────────── */
+.rep-chart-dashboard {
+  margin-bottom: var(--space-2);
+}
+
+.rep-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-6);
+}
+
+@media screen and (max-width: 992px) {
+  .rep-chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rep-chart-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0; /* Fixes Chart.js overflow */
+  width: 100%;
+}
+
+.rep-chart-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.rep-chart-wrap-pie {
+  height: 220px;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+.rep-chart-wrap-bar {
+  height: 220px;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+.rep-cell-reason {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.rep-printable-title-sheet {
+  display: none;
+}
+
+/* ─── PRINT HEADER (logo + title) ───────────────────────────── */
+.rep-print-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.rep-print-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.rep-print-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rep-print-company {
+  font-size: 22px;
+  font-weight: 900;
+  color: #6d28d9;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.rep-print-report-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8e44ad;
+  letter-spacing: 0.12em;
+  margin: 0;
+}
+
+.rep-print-period {
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+}
+
+.rep-print-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #8e44ad 0%, #c9a96e 50%, #8e44ad 100%);
+  border-radius: 999px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+/* ─── COMPANY FOOTER ────────────────────────────────────────── */
+.rep-company-footer {
+  display: none; /* hidden on screen, shown on print */
+  margin-top: 24px;
+  text-align: center;
+}
+
+.rep-footer-flourish {
+  position: relative;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.rep-footer-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.rep-footer-ornament {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #8e44ad;
+}
+
+.rep-footer-ornament--left {
+  left: 0;
+}
+
+.rep-footer-ornament--right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.rep-footer-info,
+.rep-footer-contact {
+  font-size: 10px;
+  color: #6d28d9;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.rep-footer-gst {
+  font-weight: 800;
+  color: #5b21b6;
+  letter-spacing: 0.04em;
+}
+
+.rep-footer-addr {
+  color: #7c3aed;
+}
+
+.rep-footer-sep {
+  color: #c9a96e;
+  font-size: 8px;
+}
+
+/* ─── PAGE SIZE + SUPPRESS BROWSER CHROME ────────────────────── */
+@page {
+  size: A4 portrait;
+  margin: 0; /* Removes browser URL + page title from printout */
+}
+
+/* ─── PRINT LAYOUT TABLE (To repeat headers/footers natively) ── */
+/* 
+  These rules apply to screen viewing. In print, these elements are transformed 
+  back into native table elements inside the @media print block below. 
+*/
+.print-layout-table,
+.print-layout-thead,
+.print-layout-tbody,
+.print-layout-tfoot,
+.print-layout-tr,
+.print-layout-td {
+  display: block;
+  width: 100%;
+  min-width: 0; /* Prevents layout table from forcing horizontal scroll when tables are wide */
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Restore the gap spacing between panels that was lost when wrapped in the table td */
+.print-layout-tbody .print-layout-td {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ─── PRINT LAYOUT CONTROLS ─────────────────────────────── */
+@media print {
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-sizing: border-box;
+  }
+
+  /* Reset layout constraints to prevent excess blank page heights */
+  html, body, #root,
+  .dashboard-layout,
+  .dashboard-main,
+  .dashboard-content,
+  .rep-wrapper,
+  .page-wrapper {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide all interactive UI */
+  .non-printable {
+    display: none !important;
+  }
+
+  /* ── PRINT LAYOUT TABLE TRANSFORM ───────────────────────── */
+  .print-layout-table { display: table !important; width: 100% !important; border: none !important; }
+  .print-layout-thead { display: table-header-group !important; }
+  .print-layout-tbody { display: table-row-group !important; }
+  .print-layout-tfoot { display: table-footer-group !important; }
+  .print-layout-tr { display: table-row !important; }
+  .print-layout-td { display: table-cell !important; padding: 0 !important; border: none !important; }
+
+  /* ── PRINT HEADER (logo + report name) ──────────────── */
+  /* Render statically at the top of the first page. Do not use 'fixed' 
+     to prevent covering table rows on subsequent pages. */
+  .rep-printable-title-sheet {
+    display: block !important;
+    position: static;
+    background: #fff;
+    padding: 8mm 12mm 4mm 12mm;
+    z-index: 9999;
+    border-bottom: 2px solid transparent;
+  }
+
+  .rep-print-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2mm;
+    text-align: center;
+  }
+
+  .rep-print-logo {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    max-width: 60px !important;
+    max-height: 60px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  .rep-print-company {
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    color: #6d28d9 !important;
+    letter-spacing: 0.08em !important;
+    margin: 0 !important;
+  }
+
+  .rep-print-report-label {
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    color: #8e44ad !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    margin: 0 !important;
+  }
+
+  .rep-print-period {
+    font-size: 8px !important;
+    color: #888 !important;
+    margin: 0 !important;
+  }
+
+  .rep-print-divider {
+    height: 2px !important;
+    background: linear-gradient(90deg, #8e44ad 0%, #c9a96e 50%, #8e44ad 100%) !important;
+    border-radius: 999px !important;
+    margin-top: 3mm !important;
+    margin-bottom: 0 !important;
+    opacity: 0.8 !important;
+  }
+
+  /* ── COMPANY FOOTER (bottom of every page) ──────────── */
+  .rep-company-footer {
+    display: block !important;
+    background: #fff;
+    padding: 3mm 12mm 5mm 12mm;
+  }
+
+  .rep-footer-flourish {
+    height: 16px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .rep-footer-info,
+  .rep-footer-contact {
+    font-size: 8px !important;
+    color: #6d28d9 !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .rep-footer-gst {
+    font-weight: 800 !important;
+    color: #5b21b6 !important;
+  }
+
+  .rep-footer-sep {
+    color: #c9a96e !important;
+  }
+
+  /* ── CONTENT AREA: padding so it doesn't overlap fixed header/footer ── */
+  .rep-chart-dashboard,
+  .rep-table-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-left: 12mm !important;
+    padding-right: 12mm !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Default margin-top for table section */
+  .rep-table-section {
+    margin-top: 4mm !important;
+    margin-bottom: 20mm !important;
+  }
+
+  /* Default margin-top for chart dashboard when present */
+  .rep-chart-dashboard {
+    margin-top: 4mm !important;
+  }
+
+  /* When chart dashboard is present before table, reduce table's margin-top to avoid excess gap */
+  .rep-chart-dashboard ~ .rep-table-section {
+    margin-top: 4mm !important;
+  }
+
+  /* ── CHART FIT ─────────────────────────────────────────── */
+  .rep-chart-dashboard {
+    display: block !important;
+    page-break-inside: avoid !important;
+    page-break-after: auto !important; /* Let table follow charts on Page 1 if it fits */
+  }
+
+  .rep-chart-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+    width: 100% !important;
+  }
+
+  .rep-chart-card {
+    flex: 1 !important;
+    border: 1px solid #ccc !important;
+    padding: 8px !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    overflow: hidden !important;
+  }
+
+  /* Force chart title visibility and clean styling in print */
+  .rep-chart-title {
+    color: #333 !important;
+    font-size: 10px !important;
+    font-weight: bold !important;
+    display: block !important;
+    margin-bottom: 8px !important;
+  }
+
+  .rep-chart-wrap-pie {
+    width: 160px !important;
+    height: 160px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+  }
+
+  .rep-chart-wrap-bar {
+    height: 160px !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Force Canvas aspect ratio preservation in print */
+  canvas {
+    max-width: 100% !important;
+    max-height: 160px !important;
+    width: auto !important;
+    height: 160px !important;
+    margin: 0 auto !important;
+  }
+
+  /* ── TABLE FIT ───────────────────────────────────────────── */
+  .rep-table-section {
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .rep-table-section .table-card {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  .rep-table-section .table-scroll-container {
+    overflow: visible !important;
+  }
+
+  .rep-table-section table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    font-size: 9px !important;
+  }
+
+  .rep-table-section th,
+  .rep-table-section td {
+    border: 1px solid #bbb !important;
+    padding: 4px 6px !important;
+    font-size: 9px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Make table headers stand out in deep purple */
+  .rep-table-section thead,
+  .rep-table-section thead tr {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  .rep-table-section th {
+    background-color: #f0e6ff !important;
+    background: #f0e6ff !important;
+    color: #5b21b6 !important;
+    font-weight: 700 !important;
+    padding-top: 8mm !important; /* Prevents text from touching physical edge on page 2+ */
+  }
+
+  /* Hide employee code column in print/PDF */
+  .rep-no-print-col {
+    display: none !important;
+  }
+}
+
+/* ─── DUTY SUMMARY PANEL ────────────────────────────────────── */
+.rep-ds-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.rep-ds-dates {
+  flex-wrap: wrap;
+}
+
+.rep-ds-generate-btn {
+  margin-left: auto;
+}
+
+.rep-ds-checklist-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.rep-ds-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  max-height: 200px;
+  overflow-y: auto;
+  padding: var(--space-2) 0;
+}
+
+.rep-ds-check-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background: var(--color-bg-base);
+  user-select: none;
+  min-width: 160px;
+}
+
+.rep-ds-check-item:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-surface);
+}
+
+.rep-ds-check-item--all {
+  background: var(--color-bg-surface);
+  border-color: var(--color-primary);
+  font-weight: var(--font-bold);
+  width: 100%;
+}
+
+.rep-ds-check-icon {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.rep-ds-check-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-medium);
+}

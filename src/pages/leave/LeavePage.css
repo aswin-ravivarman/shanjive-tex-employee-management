@@ -1,0 +1,109 @@
+/* LeavePage.css */
+
+.leave-wrapper {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 100%;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────── */
+.leave-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.leave-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-1) 0;
+  line-height: 1.2;
+}
+
+.leave-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── FILTERS ────────────────────────────────────────────────── */
+.leave-filters-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.leave-filters-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.leave-filter-icon {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.leave-filter-select {
+  margin: 0;
+  width: 200px;
+}
+
+/* ─── TABLE ROWS ─────────────────────────────────────────────── */
+.leave-table-code {
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+.leave-table-name {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.leave-table-dept {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.leave-table-type {
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.leave-table-paid-indicator {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-left: var(--space-1);
+}
+
+.leave-table-days {
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
+}
+
+.leave-table-reason {
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-size: var(--text-xs);
+  white-space: normal;
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  .leave-filters-row {
+    width: 100%;
+  }
+  
+  .leave-filter-select {
+    width: 100%;
+  }
+}

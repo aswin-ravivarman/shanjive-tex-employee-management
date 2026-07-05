@@ -1,0 +1,51 @@
+/* DashboardLayout.css */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100dvh;
+  background: var(--color-bg-page);
+}
+
+/* ─── SIDEBAR BACKDROP (mobile) ──────────────────────────────── */
+.sidebar-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg-overlay);
+  z-index: calc(var(--z-modal) - 10);
+  animation: fade-in 0.2s ease;
+}
+
+/* ─── MAIN AREA ──────────────────────────────────────────────── */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevent flex overflow */
+  /* Offset for fixed sidebar on desktop */
+  margin-left: var(--sidebar-width);
+  transition: margin-left var(--transition-sidebar);
+}
+
+/* When sidebar is collapsed, shrink the margin */
+.dashboard-layout.sidebar-collapsed .dashboard-main {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+/* ─── PAGE CONTENT ───────────────────────────────────────────── */
+.dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: var(--navbar-height); /* Offset for fixed navbar */
+  min-height: 0;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    margin-left: 0; /* Sidebar is a drawer on mobile — no margin offset */
+  }
+
+  .dashboard-layout.sidebar-collapsed .dashboard-main {
+    margin-left: 0;
+  }
+}

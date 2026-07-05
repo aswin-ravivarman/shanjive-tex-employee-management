@@ -1,0 +1,90 @@
+/* PayrollPage.css */
+
+.pay-wrapper {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-height: 100%;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────── */
+.pay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.pay-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-1) 0;
+  line-height: 1.2;
+}
+
+.pay-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ─── TABLE CELL STYLES ───────────────────────────────────────── */
+.pay-table-period {
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.pay-table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+/* ─── RESTRICTED BOX ─────────────────────────────────────────── */
+.pay-restricted-box {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-12) var(--space-6);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 480px;
+  margin: var(--space-12) auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.pay-restricted-icon {
+  font-size: 3rem;
+  color: var(--color-danger);
+  margin-bottom: var(--space-4);
+  background: var(--color-danger-subtle);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay-restricted-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2) 0;
+  letter-spacing: -0.01em;
+}
+
+.pay-restricted-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}

@@ -1,0 +1,9 @@
+/* PayslipsModal.css */
+
+.payslips-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-height: 60dvh;
+  overflow-y: auto;
+}

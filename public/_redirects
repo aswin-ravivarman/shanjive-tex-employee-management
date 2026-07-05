@@ -1,0 +1,8 @@
+# Netlify SPA Redirect Rule
+# -------------------------
+# React Router handles all routing client-side. Without this file,
+# a hard refresh on any route other than "/" returns a Netlify 404.
+# This tells Netlify to always serve index.html, letting React Router take over.
+# Vite copies /public into /dist at build time — no manual step needed.
+
+/*    /index.html   200

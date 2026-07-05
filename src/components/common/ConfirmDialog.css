@@ -1,0 +1,60 @@
+/* ConfirmDialog.css */
+
+.confirm-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.confirm-content-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.confirm-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+}
+
+/* Icon Theme variations */
+.confirm-icon--danger {
+  background: var(--color-danger-subtle);
+  color: var(--color-danger);
+}
+
+.confirm-icon--warning {
+  background: var(--color-warning-subtle);
+  color: var(--color-warning);
+}
+
+.confirm-icon--info {
+  background: var(--color-info-subtle);
+  color: var(--color-info);
+}
+
+.confirm-text-wrap {
+  flex: 1;
+}
+
+.confirm-message {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+.confirm-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}

@@ -1,0 +1,332 @@
+/* DashboardPage.css */
+
+.dash-wrapper {
+  padding: var(--space-4) var(--space-8) var(--space-12) var(--space-8); /* Reduced top space, increased bottom space */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-height: 100%;
+}
+
+/* ─── BANNER ─────────────────────────────────────────────────── */
+.dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.dash-greeting {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.03em;
+  margin: 0 0 var(--space-1) 0;
+  line-height: 1.2;
+}
+
+.dash-username {
+  color: var(--color-primary);
+}
+
+.dash-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.dash-date-badge {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow-xs);
+}
+
+/* ─── METRICS GRID ────────────────────────────────────────────── */
+.dash-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.dash-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
+}
+
+.dash-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Red-border alert for low stock items */
+.dash-card--danger-alert {
+  border-color: var(--color-danger-light);
+  background: var(--color-danger-subtle);
+}
+
+.dash-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.dash-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+/* Metric Colors */
+.dash-icon-wrap--primary { background: var(--color-primary-light); color: var(--color-primary); }
+.dash-icon-wrap--success { background: var(--color-success-light); color: var(--color-success); }
+.dash-icon-wrap--info { background: var(--color-info-light); color: var(--color-info); }
+.dash-icon-wrap--neutral { background: var(--color-neutral-100); color: var(--color-neutral-600); }
+.dash-icon-wrap--danger { background: var(--color-danger-light); color: var(--color-danger); }
+
+.dash-card-title {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dash-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dash-card-value {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: -0.04em;
+  margin: 0;
+  line-height: 1;
+}
+
+.dash-card-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ─── LOGS TABLE SECTION ───────────────────────────────────────── */
+.dash-logs-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dash-logs-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0-5);
+}
+
+.dash-section-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.dash-section-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Cell-level customizations */
+.dash-log-user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.dash-log-user-icon {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.dash-log-user-name {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+}
+
+.dash-log-user-role {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.dash-log-module {
+  background: var(--color-neutral-100);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  padding: var(--space-0-5) var(--space-2);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.dash-log-desc {
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+}
+
+.dash-log-time {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+/* ─── SHIMMERS ────────────────────────────────────────────────── */
+.dash-shimmer-header {
+  height: 60px;
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+  width: 40%;
+  animation: shimmer-load 1.4s infinite linear;
+}
+
+.dash-shimmer-card {
+  height: 120px;
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-xl);
+  animation: shimmer-load 1.4s infinite linear;
+}
+
+.dash-shimmer-table {
+  height: 250px;
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-xl);
+  animation: shimmer-load 1.4s infinite linear;
+}
+
+/* ─── CHARTS SECTION ─────────────────────────────────────────── */
+.dash-charts-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.dash-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+  width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+  .dash-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dash-chart-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0; /* Fixes Chart.js overflow */
+  width: 100%;
+}
+
+.dash-chart-card-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.dash-chart-canvas-wrap {
+  height: 240px;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Dashboard Log Tabs */
+.dash-logs-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.dash-log-tabs {
+  display: flex;
+  background: var(--color-neutral-100);
+  padding: 4px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.dash-log-tab {
+  border: none;
+  background: transparent;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dash-log-tab:hover {
+  color: var(--color-primary);
+}
+
+.dash-log-tab--active {
+  background: var(--color-bg-surface);
+  color: var(--color-primary) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+@media screen and (max-width: 640px) {
+  .dash-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dash-logs-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

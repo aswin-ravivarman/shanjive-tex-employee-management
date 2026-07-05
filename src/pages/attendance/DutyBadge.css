@@ -1,0 +1,26 @@
+/* Add-on styles for TFO duty count badges */
+
+.att-duty-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  min-width: 48px;
+  text-align: center;
+}
+
+.att-duty-badge--present {
+  background: var(--color-success-subtle);
+  border-color: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.att-duty-badge--absent {
+  background: var(--color-neutral-100);
+  border-color: var(--color-neutral-200);
+  color: var(--color-text-muted);
+}
